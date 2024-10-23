@@ -1,7 +1,39 @@
-table {
-    border-collapse: collapse;
+.fallback-text {
+    text-align: center;
+    font-size: 2em;
+    color: var(--light-primary);
 }
-th, td {
-    border: 1px solid black;
-    padding: .3em .8em
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: black;
+    border-radius: var(--common-radius);
+    overflow: hidden;
+}
+.table__header, 
+.table__data {
+    padding: 1em 1em;
+    color: #fff;
+}
+.table__data {
+    border-top: 1px solid var(--light-secondary);
+}
+.table__data--actions {
+    display: flex;
+    justify-content: space-evenly;
+}
+.table__actions {
+    background-color: var(--light-primary);
+    color: #fff;
+    font-weight: 600;
+    padding: .4em 1em;
+    border: none;
+    border-radius: var(--common-radius);
+    /* transition: background-color .1s; */
+}
+.table__actions:hover {
+    background-color: var(--light-secondary);
 }

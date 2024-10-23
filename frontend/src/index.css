@@ -1,3 +1,77 @@
+:root {
+    --light-primary: #dd1818;
+    --light-secondary: #7D0A0A;
+    --light-terciary: #333333;
+    --light-cuarternary: #00000044;
+    
+    --first-font-family: Lato, 'Segoe UI', sans-serif;
+    --first-font-family: Lato;
+
+    --common-radius: 1em;
+}
 * {
     box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: #151515;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(./assets/Lato/Lato-Thin.ttf) format("truetype");
+    font-weight: 100;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(./assets/Lato/Lato-ThinItalic.ttf) format("truetype");
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url(./assets/Lato/Lato-Light.ttf) format("truetype");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(./assets/Lato/Lato-LightItalic.ttf) format("truetype");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url(./assets/Lato/Lato-Regular.ttf) format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(./assets/Lato/Lato-Italic.ttf) format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url(./assets/Lato/Lato-Bold.ttf) format("truetype");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(./assets/Lato/Lato-BoldItalic.ttf) format("truetype");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url(./assets/Lato/Lato-Black.ttf) format("truetype");
+    font-weight: 900;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(./assets/Lato/Lato-BlackItalic.ttf) format("truetype");
+    font-weight: 900;
+    font-style: italic;
 }

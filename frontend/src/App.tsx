@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import ContactTable from './components/contact-table/ContactTable'
 import ContactForm from './components/contact-form/ContactForm'
+import XIcon from './icons/x'
 
 function App() {
   // const [contacts, setContacts] = useState([{"id": 1, "firstName": "John", "lastName": "Nale", "email": "johnnale@example.com"}])
@@ -46,17 +47,20 @@ function App() {
   }
 
   return (
-    <>
+    <div className='wrapper'>
+      <header className='header'>
+        <h1 className='header__title'>Contacts</h1>
+      </header>
+      <button className='button' onClick={openDialog}>Create Contact</button>
       <ContactTable contacts={contacts} updateContact={openUpdateDialog} updateCallback={onUpdating} />
-      <button onClick={openDialog}>Create Contact</button>
       {/* Dialog Element */}
-      <dialog ref={dialogRef} onClose={closeDialog}>
+      <dialog className='dialog' ref={dialogRef} onClose={closeDialog}>
         <form method='dialog'>
-          <button>x</button>
+          <button className='dialog__closer'><XIcon /></button>
         </form>
         <ContactForm existingContact={currentContact} updateCallback={onUpdating} />
       </dialog>
-    </>
+    </div>
   )
 }
 

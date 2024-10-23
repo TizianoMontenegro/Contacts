@@ -1,0 +1,65 @@
+.wrapper {
+    font-family: var(--first-font-family);
+    background-color: #151515;
+    width: 100%;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 1em;
+    border-bottom: 1px solid var(--light-secondary);
+    margin-bottom: 1em;
+}
+.header__title {
+    margin: 0;
+    text-align: center;
+    color: #eee;
+}
+
+.button {
+    background-color: transparent;
+    border: 1px solid var(--light-secondary);
+    color: var(--light-secondary);
+    padding: .6em 1.4em;
+    margin-left: 1em;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: var(--common-radius);
+
+    margin-bottom: 2em;
+}
+.button:hover {
+    border-color: var(--light-primary);
+    color: var(--light-primary);
+}
+
+.dialog {
+    position: relative;
+    width: 100%;
+    max-width: 370px;
+    background-color: #fff;
+    border-radius: var(--common-radius);
+    border: none;
+    padding: 2em 2.8em;
+    /* overflow: auto; */
+}
+.dialog:-internal-dialog-in-top-layer::backdrop {
+    position: fixed;
+    inset: 0px;
+    background: #333333;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, var(--light-primary), var(--light-terciary));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--light-primary), var(--light-terciary)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+.dialog__closer {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}

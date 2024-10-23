@@ -26,9 +26,9 @@ const ContactForm = ({existingContact = {}, updateCallback}: any) => {
 
     if (firstNameValidation || lastNameValidation || emailValidation) {
       return alert(`
-        - ${firstNameValidation !== undefined ? firstNameValidation: "\n"}
-        - ${lastNameValidation !== undefined ? lastNameValidation: "\n"}
-        - ${emailValidation !== undefined ? emailValidation: "\n"}
+        ${firstNameValidation !== undefined ? firstNameValidation : "\n"}
+        ${lastNameValidation !== undefined ? lastNameValidation : "\n"}
+        ${emailValidation !== undefined ? emailValidation : "\n"}
       `)
     }
 
@@ -46,54 +46,53 @@ const ContactForm = ({existingContact = {}, updateCallback}: any) => {
   }
 
     return <>
-        <h2>{updating ? "Update Contact" : "Create Contact"}</h2>
-        <form onSubmit={onSubmitHandler} className="contact-form">
-            <fieldset>
-                <legend>Contact Form</legend>
-                <div className="contact-form__section">
-                    <label htmlFor="firstName">First Name</label>
-                    <input 
-                        // onChange={e => setFirstName(e.target.value)} 
-                        // value={firstName} 
-                        {...firstName}
-                        type="text" 
-                        name="firstName" 
-                        id="firstName" 
-                        placeholder={existingContact.firstName}
-                    />
-                </div>
-                
-                <div className="contact-form__section">
-                    <label htmlFor="lastName">Last Name</label>
-                    <input 
-                        // onChange={e => setLastName(e.target.value)} 
-                        // value={lastName} 
-                        {...lastName}
-                        type="text" 
-                        name="lastName" 
-                        id="lastName" 
-                        placeholder={existingContact.lastName}
-                    />
-                </div>
-                
-                <div className="contact-form__section">
-                    <label htmlFor="email">Email</label>
-                    <input 
-                        // onChange={e => setEmail(e.target.value)} 
-                        // value={email} 
-                        {...email}
-                        type="text" 
-                        name="email" 
-                        id="email" 
-                        placeholder={existingContact.email}
-                    />
-                </div>
+      <h3 className="contact-title">{updating ? "Update Contact" : "Create Contact"}</h3>
+      <form className="contact-form" onSubmit={onSubmitHandler}>
+        <div className="contact-form__section">
+            <label className="contact-form__label" htmlFor="firstName">First Name</label>
+            <input 
+                className="contact-form__field"
+                {...firstName}
+                type="text" 
+                name="firstName" 
+                id="firstName" 
+                placeholder={existingContact.firstName ? existingContact.firstName : "Enter first name"}
+            />
+        </div>
+        
+        <div className="contact-form__section">
+            <label className="contact-form__label" htmlFor="lastName">Last Name</label>
+            <input 
+                className="contact-form__field"
+                {...lastName}
+                type="text" 
+                name="lastName" 
+                id="lastName" 
+                placeholder={existingContact.lastName? existingContact.lastName : "Enter last name"}
+            />
+        </div>
+        
+        <div className="contact-form__section">
+            <label className="contact-form__label" htmlFor="email">Email</label>
+            <input 
+                className="contact-form__field"
+                {...email}
+                type="text" 
+                name="email" 
+                id="email" 
+                placeholder={existingContact.email ? existingContact.email : "Enter the email"}
+            />
+        </div>
 
-                <div className="contact-form__section">
-                    <button type="submit">{updating ? "Update Contact" : "Create Contact"}</button>
-                </div>
-            </fieldset>
-        </form>
+        <div className="contact-form__section">
+            <button 
+                className="contact-form__field contact-form__field--submit" 
+                type="submit"
+            >
+              {updating ? "Update Contact" : "Create Contact"}
+            </button>
+        </div>
+      </form>
     </> 
     
 }
