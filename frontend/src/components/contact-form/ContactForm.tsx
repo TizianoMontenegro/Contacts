@@ -22,7 +22,7 @@ const ContactForm = ({existingContact = {}, updateCallback}: any) => {
     
     const firstNameValidation = validateContactForm("First Name", firstNameValue, 3, 10)
     const lastNameValidation = validateContactForm("Last Name", lastNameValue, 3, 10)
-    const emailValidation = validateContactForm("Email", emailValue, 10, 40)
+    const emailValidation = validateContactForm("Email", emailValue, 10, 40, true)
 
     if (firstNameValidation || lastNameValidation || emailValidation) {
       return alert(`

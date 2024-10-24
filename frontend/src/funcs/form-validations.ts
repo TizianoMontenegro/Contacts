@@ -2,7 +2,8 @@ export function validateContactForm(
   fieldName: string,
   field: string,
   min: number = 3,
-  max: number = 20
+  max: number = 20,
+  isEmail: boolean = false
 ) {
   const valueConditions = {
     valuesDoesNotExists: !field,
@@ -26,8 +27,14 @@ export function validateContactForm(
     return valueResponses.valuesMinLength;
   else if (valueConditions.valuesMaxLength)
     return valueResponses.valuesMaxLength;
+  
+  if (isEmail) {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(field)) {
+      return `${fieldName} field doesn't has a valid email format`
+    } 
+  }
 }
-
 
 
 
